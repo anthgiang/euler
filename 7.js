@@ -29,7 +29,7 @@ nextPrime = (n) => {
   }
 };
 
-console.time();
+console.time(); /** Timer: start */
 
 primes = [1];
 while (primes.length <= 10001) {
@@ -38,4 +38,4 @@ while (primes.length <= 10001) {
 
 console.log(primes[primes.length - 1]);
 
-console.timeEnd();
+console.timeEnd(); /** Timer: finish */
