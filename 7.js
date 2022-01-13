@@ -1,11 +1,21 @@
 /** Find the 10001st prime number */
+isPrime = (num) => {
+  if (num <= 3) {
+    return num > 1;
+  }
 
-isPrime = (n) => {
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0) {
+  if (num % 2 === 0 || num % 3 === 0) {
+    return false;
+  }
+
+  let count = 5;
+  while (count ** 2 <= num) {
+    if (num % count === 0 || num % (count + 2) === 0) {
       return false;
     }
+    count += 6;
   }
+
   return true;
 };
 
@@ -19,9 +29,13 @@ nextPrime = (n) => {
   }
 };
 
+console.time();
+
 primes = [1];
 while (primes.length <= 10001) {
   primes.push(nextPrime(primes[primes.length - 1] + 1));
 }
 
 console.log(primes[primes.length - 1]);
+
+console.timeEnd();
