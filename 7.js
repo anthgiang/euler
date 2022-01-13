@@ -1,4 +1,7 @@
 /** Find the 10001st prime number */
+
+console.time(); /** Timer: start */
+
 isPrime = (num) => {
   if (num <= 3) {
     return num > 1;
@@ -28,8 +31,6 @@ nextPrime = (n) => {
     next++;
   }
 };
-
-console.time(); /** Timer: start */
 
 primes = [1];
 while (primes.length <= 10001) {
